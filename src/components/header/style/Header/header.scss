@@ -1,0 +1,41 @@
+@import "src/style/helpers/theme";
+.header {
+    position: relative;
+    z-index: 1;
+
+    &__wrapper {
+        padding: 5px 12px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include box-shadow('primary', 0 0 10px 10px);
+        @include background-color('main');
+        @include border('bottom', 'primary', 2px, solid);
+    }
+    &__name {
+        font-weight: 700;
+        @include color('primary');
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    &__theme {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: filter .2s ease-in-out, $themeTransition;
+        @include filter('invert');
+    }
+}
+.header-theme{
+    &__ico {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        margin-bottom: -2px;
+    }
+}

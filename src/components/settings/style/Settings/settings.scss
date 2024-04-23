@@ -1,0 +1,29 @@
+.settings {
+    height: 100%;
+    @include background-color('main');
+    @include color('primary');
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__title {
+        font-size: 40px;
+    }
+    &__subtitle {
+
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__left, &__right {
+        width: 33%;
+        font-size: 28px;
+    }
+    
+    &__select {
+        cursor: pointer;
+        font-size: 20px;
+    }
+}

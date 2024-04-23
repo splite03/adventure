@@ -1,0 +1,99 @@
+.sidebar {
+    $self: &;
+    position: relative;
+    z-index: 2;
+    width: 0;
+    height: 100%;
+    transition: width .4s ease-in-out;
+
+    &--opened {
+        width: 300px;
+        max-width: 300px;
+    }
+
+    &__wrapper {
+        height: 100%;
+        width: 300px;
+        padding: 10px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        @include box-shadow('primary', 0 10px 10px 5px);
+        @include background-color('main');
+        @include border('right', 'primary', 2px, solid);
+    }
+
+    &__title {
+        @include color('primary');
+        font-size: 28px;
+        font-weight: 900;
+        padding-left: 10px;
+    }
+
+    &__list, &__item {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    &__item {
+        font-size: 20px;
+        @include background-color('main');
+        @include color('primary');
+        @include outline('primary', 2px, solid);
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: font-weight .2s ease-in-out, $themeTransition;
+
+        &:hover, &--active {
+            @include background-color('primary');
+            @include color('primary-hover');
+            font-weight: 900;
+        }
+    }
+
+    &__track {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 35px;
+        transform: translate(100%, 0);
+
+        &:hover{
+            #{$self}__toggler {
+                transform: translate(0, 0%);
+            }
+        }
+    }
+
+    &__toggler {
+        width: 30px;
+        min-height: 102px;
+        writing-mode: vertical-lr;
+        border: unset;
+        @include border(null, 'primary', 2px, solid);
+        @include color('primary');
+        @include background-color('primary');
+        font-weight: 900;
+        font-size: 20px;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+        position: absolute;
+        left: -2px;
+        transform: translate(-100%, 0%);
+        transition: transform .1s ease-in-out, opacity .3s ease-in-out, $themeTransition;
+        opacity: 1;
+    }
+
+    &__contant {
+        height: calc(100vh - 60px);
+        width: 400px;
+    }
+}

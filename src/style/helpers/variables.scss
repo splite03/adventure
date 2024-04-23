@@ -1,0 +1,55 @@
+@import "./font";
+
+/* Шрифты */
+$fontCinzel: "Cinzel", serif;
+$ff: monospace;
+
+/* Transition */
+//$themeTransition: background-color .2s ease-in-out, color .2s ease-in-out, border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+$themeTransition: z-index 0s ease-in-out;
+
+/* Theme */
+$themes: (
+        'Dark': (
+                /* Шрифтовые */
+                'primary': #d0d0d0,
+                'secondary': #c5c5c5,
+
+                /* Background */
+                'bg-primary': #4c4c4c,
+                'bg-primary-hover': #c0c0c0,
+                'bg-secondary': #cccccc,
+                'bg-main': #313131,
+
+                /* Border */
+                'br-primary': #d0d0d0,
+                'br-secondary': #d0d0d0,
+
+                /* Box-Shadow */
+                'bs-primary': rgba(0, 0, 0, 0.3),
+
+                /* filter */
+                'fl-invert': invert(1),
+        ),
+        'Light': (
+                /* Шрифтовые */
+                'primary': #171717,
+                'primary-hover': #000000,
+                'secondary': #2f2f2f,
+
+                /* Background */
+                'bg-primary': #fff,
+                'bg-secondary': #cecece,
+                'bg-main': #e3e3e3,
+
+                /* Border */
+                'br-primary': #171717,
+                'br-secondary': #878787,
+
+                /* Box-Shadow */
+                'bs-primary': rgba(0, 0, 0, 0.2),
+
+                /* filter */
+                'fl-invert': invert(0),
+        )
+) !default;

@@ -1,0 +1,9 @@
+.creator {
+    height: 100%;
+    @include background-color('main');
+    @include color('primary');
+
+    &__title {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,31 @@
+.page {
+    &__body {
+        height: calc(100vh - 60px);
+        width: 100%;
+        display: flex;
+        position: relative;
+    }
+
+    &__tab {
+        width: calc(100% - 300px);
+        padding: 20px;
+        transition: width .4s ease-in-out, left .4s ease-in-out, $themeTransition;
+        position: absolute;
+        top: 0;
+        left: 300px;
+
+        &--full {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}

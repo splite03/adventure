@@ -1,0 +1,38 @@
+@import "./variables";
+
+@mixin setter($property, $type, $key, $size: null, $style: null, $themes: $themes) {
+    @each $theme, $colors in $themes {
+        &.theme-#{$theme},
+        .theme-#{$theme} & {
+            #{$property}: $size $style map-get($colors, $type + $key);
+        }
+    }
+}
+
+@mixin color($arguments...) {
+    @include setter('color', '', $arguments...);
+}
+
+@mixin border($dir, $arguments...) {
+    @if $dir{
+        @include setter('border-#{$dir}', 'br-', $arguments...);
+    } @else {
+        @include setter('border', 'br-', $arguments...);
+    }
+}
+
+@mixin outline($arguments...) {
+    @include setter('outline', 'br-', $arguments...);
+}
+
+@mixin background-color($arguments...) {
+    @include setter('background-color', 'bg-', $arguments...);
+}
+
+@mixin box-shadow($arguments...) {
+    @include setter('box-shadow', 'bs-', $arguments...);
+}
+
+@mixin filter($arguments...) {
+    @include setter('filter', 'fl-', $arguments...);
+}

@@ -1,0 +1,8 @@
+.entry {
+    font-family: $ff;
+    min-height: 100vh;
+    @include background-color('main');
+}
+*:not(input):not(textarea) {
+    transition: $themeTransition;
+}
